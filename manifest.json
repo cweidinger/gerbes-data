@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "XHR JSON Saver ",
+  "version": "1.2",
+  "description": "https://gemini.google.com/app/09a6509dc11abd50 Monitors a specific URL for a POST request and saves the JSON response. ",
+  "permissions": [
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://www.gerbes.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.gerbes.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "interceptor.js"
+      ],
+      "matches": [
+        "https://www.gerbes.com/*"
+      ]
+    }
+  ]
+}
+
